@@ -33,9 +33,8 @@ interface IClaimable {
   ) external returns (uint256);
 
   /**
-   * @notice Checks if an address can claim prizes
-   * @param _claimer The address to check
-   * @return True if the address can claim prizes, false otherwise
+   * @notice Gets the current address that can call `claimPrize`.
+   * @return The claimer address
    */
-  function isClaimer(address _claimer) external returns (bool);
+  function claimer() external returns (address);
 }
