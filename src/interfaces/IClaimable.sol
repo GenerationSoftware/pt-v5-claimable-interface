@@ -20,16 +20,16 @@ interface IClaimable {
    * @param _winner The winner of the prize
    * @param _tier The prize tier
    * @param _prizeIndex The prize index
-   * @param _fee The fee to charge, in prize tokens
-   * @param _feeRecipient The recipient of the fee
+   * @param _reward The reward to allocate to the reward recipient, in prize tokens
+   * @param _rewardRecipient The recipient of the reward
    * @return The total prize token amount claimed (zero if already claimed)
    */
   function claimPrize(
     address _winner,
     uint8 _tier,
     uint32 _prizeIndex,
-    uint96 _fee,
-    address _feeRecipient
+    uint96 _reward,
+    address _rewardRecipient
   ) external returns (uint256);
 
   /**
