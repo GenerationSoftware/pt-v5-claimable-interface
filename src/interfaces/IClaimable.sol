@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
+import { IPrizePool } from "./IPrizePool.sol";
+
 /**
  * @title  PoolTogether V5 Claimable Interface
  * @author G9 Software Inc.
@@ -17,6 +19,7 @@ interface IClaimable {
 
   /**
    * @notice Claim a prize for a winner
+   * @param _prizePool The prize pool to claim the prize from
    * @param _winner The winner of the prize
    * @param _tier The prize tier
    * @param _prizeIndex The prize index
@@ -25,6 +28,7 @@ interface IClaimable {
    * @return The total prize token amount claimed (zero if already claimed)
    */
   function claimPrize(
+    IPrizePool _prizePool,
     address _winner,
     uint8 _tier,
     uint32 _prizeIndex,
